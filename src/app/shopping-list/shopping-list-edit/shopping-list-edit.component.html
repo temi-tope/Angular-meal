@@ -15,9 +15,12 @@
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <button class="btn btn-success" type="submit">Add</button>
-          <button class="btn btn-danger" type="button">Delete</button>
-          <button class="btn btn-primary" type="button">Clear</button>
+          <button class="btn btn-success"
+          (click) = "onAdd(ingredient)" type="submit">Add</button>
+          <button class="btn btn-danger"
+          (click) = "onDelete(ingredient)" type="button">Delete</button>
+          <button class="btn btn-primary"
+          (click)="onClear(ingredient)" type="button">Clear</button>
         </div>
       </div>
     </form>
