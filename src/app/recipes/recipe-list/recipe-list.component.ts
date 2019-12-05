@@ -10,11 +10,11 @@ export class RecipeListComponent implements OnInit {
   @Output() recipeWasSelected = new EventEmitter<Recipe>();
   recipes: Recipe[] = [
     // tslint:disable-next-line: max-line-length
-    new Recipe('A test Recipe', 'This is just a test', 'https://tse3.mm.bing.net/th?id=OIP.4suPi4X0P8OSQwSJ4KE5wQHaLH&pid=Api&P=0&w=300&h=300'),
+    new Recipe('A test Recipe 1', 'This is just a test', 'https://tse3.mm.bing.net/th?id=OIP.4suPi4X0P8OSQwSJ4KE5wQHaLH&pid=Api&P=0&w=300&h=300'),
     // tslint:disable-next-line: max-line-length
-    new Recipe('A test Recipe', 'This is just a test', 'https://tse3.mm.bing.net/th?id=OIP.4suPi4X0P8OSQwSJ4KE5wQHaLH&pid=Api&P=0&w=300&h=300'),
+    new Recipe('A test Recipe 2', 'This is just a test', 'https://tse3.mm.bing.net/th?id=OIP.4suPi4X0P8OSQwSJ4KE5wQHaLH&pid=Api&P=0&w=300&h=300'),
     // tslint:disable-next-line: max-line-length
-    new Recipe('A test Recipe', 'This is just a test', 'https://tse3.mm.bing.net/th?id=OIP.4suPi4X0P8OSQwSJ4KE5wQHaLH&pid=Api&P=0&w=300&h=300')
+    new Recipe('A test Recipe 3', 'This is just a test', 'https://tse3.mm.bing.net/th?id=OIP.4suPi4X0P8OSQwSJ4KE5wQHaLH&pid=Api&P=0&w=300&h=300')
 
   ];
   constructor() { }
@@ -23,7 +23,7 @@ export class RecipeListComponent implements OnInit {
   }
 
   onRecipeSelected(recipe: Recipe) {
-
+    this.recipeWasSelected.emit(recipe);
   }
 
 }
