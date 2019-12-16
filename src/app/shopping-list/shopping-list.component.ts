@@ -25,4 +25,8 @@ private subscription: Subscription;
     ngOnDestroy() {
       this.subscription.unsubscribe();
     }
+
+    onEditItem(index: number) {
+      this.slService.startedEditing.next(index);
+    }
 }
