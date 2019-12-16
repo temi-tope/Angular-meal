@@ -16,7 +16,7 @@ private subscription: Subscription;
 
   ngOnInit() {
     this.ingredients = this.slService.getIngredients();
-    this.subscription = this.slService.ingredientChanged.subscribe(
+    this.subscription = this.slService.ingredientsChanged.subscribe(
       (ingredients: Ingredient[]) => {
         this.ingredients = ingredients;
       }
