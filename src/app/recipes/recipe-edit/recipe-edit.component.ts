@@ -3,7 +3,6 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray, Validators, AbstractControl } from '@angular/forms';
 
 import { RecipeService } from '../recipe.service';
-import { Recipe } from '../recipe.model';
 
 @Component({
   selector: 'app-recipe-edit',
@@ -14,7 +13,6 @@ export class RecipeEditComponent implements OnInit {
   id: number;
   editMode = false;
   recipeForm: FormGroup;
-  controls: AbstractControl;
 
   constructor(private route: ActivatedRoute,
               private recipeService: RecipeService,
@@ -53,7 +51,7 @@ export class RecipeEditComponent implements OnInit {
   onAddIngredient() {
     (this.recipeForm.get('ingredients') as FormArray).push(
       new FormGroup({
-        name: new FormControl(),
+        name: new FormControl(null, Validators.required),
         amount: new FormControl(null, [
           Validators.required,
           Validators.pattern(/^[1-9]+[0-9]*$/)
@@ -79,7 +77,8 @@ export class RecipeEditComponent implements OnInit {
       recipeName = recipe.name;
       recipeImagePath = recipe.imagePath;
       recipeDescription = recipe.description;
-      if (recipe.ingredients) {
+      // tslint:disable-next-line: no-string-literal
+      if (recipe['ingredients']) {
         // tslint:disable-next-line: prefer-const
         for (let ingredient of recipe.ingredients) {
           recipeIngredients.push(
