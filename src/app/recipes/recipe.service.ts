@@ -56,6 +56,11 @@ export class RecipeService {
 
     }
 
+    addRecipee(recipe: Recipe) {
+      return recipe;
+      // this.recipesChanged.next(this.recipes.slice());
+     }
+
    addRecipe(recipe: Recipe) {
     this.recipes.push(recipe);
     this.recipesChanged.next(this.recipes.slice());
