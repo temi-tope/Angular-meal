@@ -50,7 +50,8 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ShoppingListService,
+  providers: [
+    ShoppingListService,
     RecipeService,
     DataStorageSevice,
     AuthService,

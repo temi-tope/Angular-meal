@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Recipe } from '../recipes/recipe.model';
 import { map } from 'rxjs/operators';
 import { AuthService } from '../auth/auth.service';
-import * as firebase from 'firebase';
+
 
 
 @Injectable()
